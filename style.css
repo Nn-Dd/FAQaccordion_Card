@@ -129,6 +129,13 @@ body {
   max-width: 400px;
   transition: all 2s;
 }
+.title h2 {
+  transition: 0.3s ease-out;
+}
+.title h2:hover {
+  color: #ff9271;
+  transition: 0.3s ease-in;
+}
 .questions.active:last-child {
   margin-bottom: 0;
 }
@@ -193,7 +200,7 @@ body {
     align-self: auto;
     left: 0;
   }
-  .left img{
+  .left img {
     height: 0;
   }
   .right {
