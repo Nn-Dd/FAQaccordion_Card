@@ -24,16 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
         otherQuestion.querySelector(
           ".question-heading"
         ).style.fontWeight = `400`;
+        otherQuestion.style.marginBottom =`0`;
       });
 
       // If the clicked question wasn't active, open it
       if (!isActive) {
-        question.style.transition = "all 2s";
+        question.style.transition = "all 0.3s";
         question.classList.add("active");
         paragraph.style.display = "block";
         icon.style.transform = `rotate(180deg)`;
         heading.style.color = `#201e36`;
         heading.style.fontWeight = `700`;
+        question.style.marginBottom =`20px`;
       }
     });
   });

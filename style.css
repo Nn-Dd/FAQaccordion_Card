@@ -5,6 +5,15 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 body {
   min-height: 100vh;
@@ -47,9 +56,13 @@ body {
   padding-inline: 3rem;
 }
 .image-cube {
+  width: 191px;
+  height: 184px;
+  background-image: url(./images/illustration-box-desktop.svg);
+  top: 53%;
+  left: 24.1%;
+  transform: translate(-50%, -50%);
   position: fixed;
-  top: 42%;
-  left: 19.1%;
   z-index: 9999;
 }
 
@@ -59,6 +72,10 @@ body {
   position: relative;
   left: -15%;
   max-width: 100%;
+}
+.left img {
+  width: 472px;
+  height: 359px;
 }
 .right {
   margin-right: 2rem;
@@ -100,18 +117,22 @@ body {
   overflow: hidden;
   color: hsl(240, 6%, 50%);
   font-size: 0.8rem;
-  transition: all 2s;
+  transition: all 0.3s;
 }
 .active,
 .questions:hover {
   color: hsl(237, 12%, 33%);
-  transition: 0.2s ease-in;
+  transition: all 0.3s;
 }
 .questions {
   min-width: 400px;
   max-width: 400px;
   transition: all 2s;
 }
+.questions.active:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
   .image-cube {
     top: 30%;
@@ -120,18 +141,79 @@ body {
   }
 
   .left {
-    left: -5%;
+    align-self: auto;
+    left: 0;
+  }
+  .left img {
+    width: 50%;
+  }
+  .card {
+    width: 600px;
+    min-width: 600px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .image-cube {
+    top: 52%;
+    left: 15.5%;
+    transform: translate(-50%, -50%);
+    position: absolute;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .image-cube {
+    width: 198px;
+    height: 150px;
+    background-image: url(./images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  body {
+    font-size: 12px;
+  }
   .card {
+    flex-direction: column;
+    border-radius: 1rem;
     background-image: url(./images/bg-pattern-mobile.svg);
+    background-position: top;
+    background-size: auto;
+    width: 350px;
+    min-width: 350px;
+    height: 488px;
+    padding-inline: 1.5rem;
+    gap: 3rem;
+  }
+  .left {
+    width: 0;
+    visibility: hidden;
+    align-self: auto;
+    left: 0;
+  }
+  .left img{
+    height: 0;
+  }
+  .right {
+    margin-right: 0;
+  }
+  .right h1 {
+    display: flex;
+    justify-content: center;
+  }
+  .questions {
+    min-width: 0;
+    margin-bottom: 20px;
+  }
+  .title h2 {
+    letter-spacing: 0;
   }
 }
 .attribution {
   color: #fff;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 12px;
   text-align: center;
 }

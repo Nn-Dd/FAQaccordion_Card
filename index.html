@@ -14,27 +14,23 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div
-      class="image-cube"
-      style="
-        background-image: url(./images/illustration-box-desktop.svg);
-        width: 191px;
-        height: 184px;
-      "
-    ></div>
+    <div class="image-cube"></div>
 
     <main>
       <div class="card">
         <div class="left">
           <picture>
             <source
-              media="(max-width:480px)"
               srcset=".\images\illustration-woman-online-mobile.svg"
+              media="(max-width:600px)"
+            />
+            <source
+              srcset="./images/illustration-woman-online-desktop.svg"
+              media="(min-width:601px)"
             />
             <img
               src="./images/illustration-woman-online-desktop.svg"
-              alt="women.illustration"
-              style="width: auto"
+              alt="women-illustration"
             />
           </picture>
         </div>
